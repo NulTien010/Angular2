@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="bower_components/polymer/polymer.html" />
+</head>
+<body>
+    <dom-module id="main-document-element">
+        <template>
+            <div style="background-color: yellow">
+                <p>
+                    Hi! I'm a Polymer element that was defined in the
+                    main document!
+                </p></div>
+        </template>
+        <script>
+            HTMLImports.whenReady(function () {
+              Polymer({
+                is: 'main-document-element'
+              });
+            });
+        </script>
+    </dom-module>
+    <main-document-element></main-document-element>
+    <p>Reference: https://www.polymer-project.org/1.0/docs/devguide/registering-elements</p>
+</body>
+</html>

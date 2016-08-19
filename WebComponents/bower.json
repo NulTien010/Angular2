@@ -1,0 +1,14 @@
+{
+	"name": "ASP.NET",
+	"private": true,
+  "dependencies": {
+    "webcomponentsjs": "",
+    "polymer": "",
+    "google-map": "",
+    "google-maps": "",
+    "paper-button": "",
+    "paper-input": "",
+    "paper-tabs": "",
+    "paper-popup": ""
+  }
+}

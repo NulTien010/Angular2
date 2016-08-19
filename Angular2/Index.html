@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Angular 2</title>
+    <link rel="icon" href="/favicon.ico">
+    <base href="/">
+
+    <!-- Some CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"/>
+
+    <!-- Load libraries -->
+    <!-- 1. Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+
+    <!-- 2.1. Dependency-->
+    <script src="node_modules/zone.js/dist/zone.min.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+
+    <!-- 2.2. SystemJS-->
+    <script src="node_modules/systemjs/dist/system.js"></script>
+
+    <!-- 3. Configure SystemJS -->
+    <script src="app/systemjs.config.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<app-layout>Loading...</app-layout>
+<script type="text/javascript">
+    System.import('app')
+        .then(function(module) {
+        })
+        .catch(function(err) {
+            console.log('import error');
+            console.error(err);
+        });
+</script>
+</body>
+</html>

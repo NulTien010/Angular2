@@ -1,0 +1,25 @@
+﻿<link rel="import" href="../bower_components/polymer/polymer.html"/>
+
+<dom-module id="me-template" attributes="memberName memberAddress imgSrc">
+    <template>
+        <link rel="stylesheet" href="meTemplate.css"/>
+        <h1>Person</h1>
+        <div>{{memberName}}</div>
+        <div>{{memberAddress}}</div>
+        <div>
+            <img src="{{imgSrc}}"/>
+        </div>
+    </template>
+    <script type="text/javascript">
+        (function (undefined) {
+
+            'use strict';
+            Polymer({
+                is: "me-template",
+                ready: function() {
+                    console.log("Polymer is ready!!!");
+                }
+            });
+        })();
+    </script>
+</dom-module>

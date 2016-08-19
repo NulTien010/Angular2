@@ -3,3 +3,12 @@
 ################################################################################
 
 /packages
+/.vs
+/Angular2/bin
+/Angular2/bower_components
+/Angular2/obj/Debug
+/Angular2/node_modules
+/WebComponents/node_modules
+/WebComponents/bower_components
+/WebComponents/bin
+/WebComponents/obj/Debug

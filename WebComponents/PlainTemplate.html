@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Template</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div id="shell"></div>
+    <template id="myTemplate">
+        <style type="text/css">
+            h1 {
+                background-color: red;
+            }
+        </style>
+
+        <h1>Inside Template</h1>
+    </template>
+    <script type="text/javascript">
+    (function() {
+
+        'use strict';
+        var template = window.document.querySelector("#myTemplate");
+        var clone = window.document.importNode(template.content, true);
+
+        window.document.getElementById("shell").appendChild(clone);
+    })();
+    </script>
+</body>
+</html>

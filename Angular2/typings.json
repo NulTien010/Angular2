@@ -1,0 +1,10 @@
+{
+  "name": "angular2-angular",
+  "dependencies": {
+    "debug": "registry:npm/debug#2.0.0+20160511151334"
+  },
+  "globalDependencies": {
+    "core-js": "registry:dt/core-js#0.0.0+20160524134847",
+    "systemjs": "registry:dt/systemjs#0.18.4+20160417155658"
+  }
+}

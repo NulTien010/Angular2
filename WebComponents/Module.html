@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <script type="text/javascript">
+        /*  Globals */
+        var myName = "Srdjan Markovic";
+        var fnSum = function(a, b) { return a + b; }
+
+        /*  Object Literal  */
+        var namespaceA = {
+            nestedNamespace: {
+                date: new Date(),
+                calculate: function(a, b) { return a + b; }
+            }
+        };
+        var date = namespaceA.nestedNamespace.date;
+        var sum = namespaceA.nestedNamespace.calculate(5, 8);
+
+
+        /*  Revealing Module Pattern   */
+        var Zoo = (function() {
+            var getBarkStyle = function(isHowler) {
+                return isHowler ? 'woooooow!' : 'woof, woof!';
+            };
+            var Dog = function(name, breed) {
+                this.bark = function() {
+                    return name + ': ' + getBarkStyle(breed === 'husky');
+                };
+            };
+            var Wolf = function(name) {
+                this.bark = function() {
+                    return name + ': ' + getBarkStyle(true);
+                };
+            };
+            return {
+                Dog: Dog,
+                Wolf: Wolf
+            };
+        })();
+
+        var myDog = new Zoo.Dog('Sherlock', 'beagle');
+        console.log(myDog.bark()); // Sherlock: woof, woof!
+
+        var myWolf = new Zoo.Wolf('Werewolf');
+        console.log(myWolf.bark()); // Werewolf: woooooow!
+    </script>
+    <script type="text/javascript">
+        /*  Modular JavaScript  */
+        /* https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules  */
+        var getBarkStyle = function(isHowler) {
+            return isHowler? 'woooooow!': 'woof, woof!';
+        };
+        export function Dog(name, breed) {
+            this.bark = function() {
+                return name + ': ' + getBarkStyle(breed === 'husky');
+            };
+        }
+        export function Wolf(name) {
+            this.bark = function() {
+                return name + ': ' + getBarkStyle(true);
+            };
+        }
+
+        import { Dog, Wolf } from './zoo';
+
+        var myDog = new Dog('Sherlock', 'beagle');
+        console.log(myDog.bark()); // Sherlock: woof, woof!
+
+        var myWolf = new Wolf('Werewolf');
+        console.log(myWolf.bark()); // Werewolf: woooooow!
+    </script>
+</body>
+</html>

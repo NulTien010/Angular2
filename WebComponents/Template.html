@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Template</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+        h1 {
+            background-color: yellow;
+        }
+
+        template {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Page Content</h1>
+    <div id="shell"></div>
+    <template id="myTemplate">
+        <style type="text/css">
+            h1 {
+                background-color: red;
+            }
+        </style>
+
+        <h1>Inside Template</h1>
+        <div id="divContent"></div>
+        <script type="text/javascript">
+            (function () {
+                var divContent = window.document.getElementById("divContent");
+                divContent.innerText = "Import Date & Time: " + new Date();
+                console.log("Yuhooo, I'm appended to DOM :)!");
+            })();
+        </script>
+    </template>
+    <script type="text/javascript">
+    (function() {
+
+        'use strict';
+        var template = window.document.querySelector("#myTemplate");
+        var clone = window.document.importNode(template.content, true);
+
+        window.document.getElementById("shell").appendChild(clone);
+    })();
+    </script>
+    <!-- Add 10 more temlates here, and choose one depending on condition???-->
+    <!-- Even better, I can have SPA !-->
+</body>
+</html>
