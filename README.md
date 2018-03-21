@@ -24,4 +24,3 @@ Some of new features and enhancements to existing ones:
 - Angular Forms adds updateOn Blur / Submit
 - RxJS 5.5
 - New Router Lifecycle Events
-- 
